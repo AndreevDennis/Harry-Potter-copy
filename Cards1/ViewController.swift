@@ -80,7 +80,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         if let trackingImages  = ARReferenceImage.referenceImages(inGroupNamed: "Playing Cards", bundle: Bundle.main) {
             configuration.trackingImages = trackingImages
-            configuration.maximumNumberOfTrackedImages = 5
+            configuration.maximumNumberOfTrackedImages = 4
         }
         
         sceneView.session.run(configuration)
@@ -98,13 +98,14 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         if let imageAnchor = anchor as? ARImageAnchor {
             let size = imageAnchor.referenceImage.physicalSize
             let plane = SCNPlane(width: size.width, height: size.height)
-            plane.firstMaterial?.diffuse.contents = UIColor.white.withAlphaComponent(0.5)
+            plane.firstMaterial?.diffuse.contents = UIColor.white.withAlphaComponent(0.0)
             plane.cornerRadius = 0.005
             let planeNode = SCNNode(geometry: plane)
             planeNode.eulerAngles.x = -.pi / 2
             node.addChildNode(planeNode)
             
             var shapeNode: SCNNode?
+      
             switch imageAnchor.referenceImage.name {
             case cardType.king.rawValue:
                 shapeNode = grifNode
@@ -134,9 +135,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             //            shapeNode?.runAction(repeatSpin)
             
             guard let shape  = shapeNode else {return nil}
+//            guard let shape1 = shapeNode1 else {return nil}
             
             node.addChildNode(shape)
             imageNodes.append(node)
+            
+//            node.addChildNode(shape1)
             return node
         }
         
@@ -151,15 +155,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             let positionFour = SCNVector3ToGLKVector3(imageNodes[3].position)
             let distance = GLKVector3Distance(positionOne, positionTwo)
             let secondDistance = GLKVector3Distance(positionThree, positionFour)
-            if distance < 0.5 && secondDistance < 0.5 {
+            if distance < 0.1 && secondDistance < 0.1 {
                 spinJump(node: imageNodes[0])
                 spinJump(node: imageNodes[1])
                 spinJump(node: imageNodes[2])
                 spinJump(node: imageNodes[3])
                 isJumping = true
+                
             } else {
                 isJumping = false
-                //
             }
         }
     }
@@ -178,7 +182,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         shapeNode.runAction(shapeSpin)
         shapeNode.runAction(upDown)
         shapeNode.runAction(scale)
-        
         lbl = true
     }
     
