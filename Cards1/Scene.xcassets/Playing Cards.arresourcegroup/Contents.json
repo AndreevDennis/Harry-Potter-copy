@@ -1,0 +1,38 @@
+{
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  },
+  "resources" : [
+    {
+      "filename" : "king.arreferenceimage"
+    },
+    {
+      "filename" : "krest.arreferenceimage"
+    },
+    {
+      "filename" : "picture1.arreferenceimage"
+    },
+    {
+      "filename" : "picture2.arreferenceimage"
+    },
+    {
+      "filename" : "picture3.arreferenceimage"
+    },
+    {
+      "filename" : "picture4.arreferenceimage"
+    },
+    {
+      "filename" : "picture5.arreferenceimage"
+    },
+    {
+      "filename" : "picture6.arreferenceimage"
+    },
+    {
+      "filename" : "queen.arreferenceimage"
+    },
+    {
+      "filename" : "valet.arreferenceimage"
+    }
+  ]
+}
