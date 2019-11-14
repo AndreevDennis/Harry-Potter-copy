@@ -43,7 +43,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let picture3Scene = SCNScene(named: "art.scnassets/advice3.scn")
         let picture4Scene = SCNScene(named: "art.scnassets/advice4.scn")
         let picture5Scene = SCNScene(named: "art.scnassets/advice5.scn")
-        let picture6Scene = SCNScene(named: "art.scnassets/advice6 .scn")
+        let picture6Scene = SCNScene(named: "art.scnassets/advice6.scn")
+        
         let slizerinScene = SCNScene(named: "art.scnassets/grif.scn")
         let grifScene = SCNScene(named: "art.scnassets/kog.scn")
         let kogScene = SCNScene(named: "art.scnassets/slizerin.scn")
@@ -59,7 +60,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         pufNode = pufScene?.rootNode
         grifNode = grifScene?.rootNode
         slizerinNode = slizerinScene?.rootNode
-        createTimer()
+//        createTimer()
     }
     
     func createTimer(){

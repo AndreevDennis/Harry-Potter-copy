@@ -287,6 +287,7 @@
 		C29FAAF72371FED600A2ABE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VAD68YH3ZG;
 				INFOPLIST_FILE = Cards1/Info.plist;
@@ -304,6 +305,7 @@
 		C29FAAF82371FED600A2ABE6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VAD68YH3ZG;
 				INFOPLIST_FILE = Cards1/Info.plist;
